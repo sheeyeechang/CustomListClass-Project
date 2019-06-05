@@ -10,15 +10,15 @@ namespace CustomListClassProject
     {
         //Member variable
         //Array
-        private T[] itemArray;
+        private T[] itemArray = new T[5] ;
 
         private int count;
         // read-only Count property: 
-        public int Count { get { return count; } set { count = value; } };
+        public int Count { get { return count; } set { count = value; } }
 
         private int capacity;
         // Capacity property: publicly see the size of my private array.
-        public int Capacity { get { return capacity; } set { count = value; } };
+        public int Capacity { get { return capacity; } set { count = value; } }
 
 
         //Constructor
