@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CustomListClassProject;
 
 namespace CustomListClassProjectUnitTest
 {
@@ -15,10 +16,10 @@ namespace CustomListClassProjectUnitTest
             int value1 = 4;
             int expected = 4;
             int actual;
-
+            
             // act
             testList.Add(value1);
-            actual = testList.arrayItem[0];
+            actual = testList.itemArray[0];
 
             // assert
             Assert.AreEqual(expected, actual);

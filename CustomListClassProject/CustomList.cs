@@ -34,26 +34,20 @@ namespace CustomListClassProject
         //ADD TESTS: 6 total 
         //Add method: adds an input value to an array.
 
-            public void AddItem(T item)
+        public void Add(T item)
+        {
+            CustomList<T> testList = new CustomList<T>();
+            count = capacity;
+            for (int i = 0; i < count; i++)
             {
-                CustomList<T> testList = new CustomList<T>();
-            if (count == capacity)
-            {
-                for (int i = 0; i < count; i++)
-                {
-                    itemArray = new T[count];
-                }
+                itemArray = new T[count];
             }
-            else
-            {
-
-            }
-            }
-            
-
-
+        }
+      
 
         // C# indexer so that I can make the objects in my list accessible via index. A user cannot access an out-of-bounds index.
+
+
 
         // method ability to add an object 
 
