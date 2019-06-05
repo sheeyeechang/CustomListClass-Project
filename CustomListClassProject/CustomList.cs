@@ -10,43 +10,40 @@ namespace CustomListClassProject
     {
         //Member variable
         //Array
-        FirstArray firstArray;
+        private T[] itemArray;
 
-        public int count;
+        private int count;
+        // read-only Count property: 
+        public int Count { get { return count; } set { count = value; } };
+
+        private int capacity;
+        // Capacity property: publicly see the size of my private array.
+        public int Capacity { get { return capacity; } set { count = value; } };
+
 
         //Constructor
         public CustomList()
         {
             count = 0;
-            Capacity = 4;
+            capacity = 5;
 
-            firstArray = new T[Capacity];
+            itemArray = new T[capacity];
         }
 
         // Member method
-
         //Get Set Array
-        public T this[int i]
-        {
-            //if ( count >= i >= 0)
-            get
-            {
-                return firstArray[i];
-            }
-            set
-            {
-                firstArray[i] = value;
-            }
-
-            // read-only Count property: count of the number of elements in my custom list class instance.
-
-            // Capacity property: publicly see the size of my private array.
 
             // C# indexer so that I can make the objects in my list accessible via index. A user cannot access an out-of-bounds index.
 
             // method ability to add an object 
 
+
+
             // method ability to remove an object
+
+
+
+
 
             // override the ToString method that converts the contents of the custom list to a string.
 
