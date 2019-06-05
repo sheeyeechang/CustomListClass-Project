@@ -10,6 +10,10 @@ namespace CustomListClassProject
     {
         static void Main(string[] args)
         {
+            CustomList<int> customIntList = new CustomList<int>();
+
+            CustomList<string> customStringList = new CustomList<string>();
+
         }
     }
 }
