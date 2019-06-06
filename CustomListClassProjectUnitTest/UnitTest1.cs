@@ -262,5 +262,27 @@ namespace CustomListClassProjectUnitTest
             // assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void Remove_RemoveItemIntNotOnTheList_ReturnNothingRemoveFromList()
+        {
+            // arrange
+            CustomList<int> testList = new CustomList<int>(); //need to add value before remove value
+            int value1 = 4;
+            int value2 = 6;
+            int value3 = 7;
+            int value4 = 5;
+            int expected = 3;
+            int actual;
+
+            // act
+            testList.Add(value1);
+            testList.Add(value2);
+            testList.Add(value3);
+            testList.Remove(value4);
+            actual = testList.Count;
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
