@@ -22,6 +22,9 @@ namespace CustomListClassProject
             customIntList.Remove(1);
             customIntList.Remove(7);
             customIntList.Remove(3);
+            //ToString
+            Console.WriteLine(customIntList.ToString());
+            Console.ReadLine();
         }
     }
 }

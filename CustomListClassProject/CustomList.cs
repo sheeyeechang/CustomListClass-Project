@@ -94,15 +94,31 @@ namespace CustomListClassProject
         // override the ToString method that converts the contents of the custom list to a string.
         public override string ToString()
         {
-            itemString = " ";
-            return;
+            string itemString = "";
+            for (int i = 0; i < count; i++)
+            {
+                if (i == 0)
+                {
+                    itemString += $"{itemArray[i]}";
+                    
+                }
+                else
+                {
+                    itemString += ($", {itemArray[i]}");
+                }
+            }
+            return itemString;
         }
 
 
-        // be able to overload the + operator, so that I can add two instances of the custom list class together.
+        // be able to overload the + operator, 
+
+
+        //so that I can add two instances of the custom list class together.
         //List<int> one = new List<int>() {1,3,5}; and List<int> two = new List<int>() { 2, 4, 6 };
         //List<int> result = one + two;
         //result has 1,3,5,2,4,6
+
 
         //, I want to be able to overload the – operator, so that I can subtract one instance of a custom list class from another instance of a custom list class.
         //List<int> one = new List<int>() {1,3,5}; and List<int> two = new List<int>() { 2, 1, 6 };
