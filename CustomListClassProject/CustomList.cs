@@ -91,8 +91,12 @@ namespace CustomListClassProject
 
         }
 
-
         // override the ToString method that converts the contents of the custom list to a string.
+        public override string ToString()
+        {
+            itemString = " ";
+            return;
+        }
 
 
         // be able to overload the + operator, so that I can add two instances of the custom list class together.

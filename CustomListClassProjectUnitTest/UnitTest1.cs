@@ -7,7 +7,7 @@ namespace CustomListClassProjectUnitTest
     [TestClass]
     public class UnitTest1
     {
-        //ADD TESTS: 6 total
+        //ADD TESTS: 6 total  ----------------------------------------------------------------------
         [TestMethod]
         public void Add_AddItemIntToEmptyList_ItemGoesToIndexZero()
         {
@@ -152,7 +152,7 @@ namespace CustomListClassProjectUnitTest
             Assert.AreEqual(expected, actual);
         }
 
-        //REMOVE TESTS:  5 total
+        //REMOVE TESTS: 5 total  -----------------------------------------------------------
         [TestMethod]
         public void Remove_RemoveItemIntFromList_ReturnItemIndexOneToIndexZero()
         {
@@ -280,6 +280,81 @@ namespace CustomListClassProjectUnitTest
             testList.Add(value3);
             testList.Remove(value4);
             actual = testList.Count;
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        //ToString: 4 total  -------------------------------------------------------------------------------
+        [TestMethod]
+        public void ToString_ItemFromListWithNoValue_ReturnItemWithNoValueAsString()
+        {
+            // arrange
+            CustomList<string> testList = new CustomList<string>();
+            string value1 = "";
+            string expected = "";
+            string actual;
+
+            // act
+            testList.Add(value1);
+            actual = testList.ToString();
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ToString_OneItemIntFromList_ReturnOneItemAsString()
+        {
+            // arrange
+            CustomList<int> testList = new CustomList<int>();
+            int value1 = 4;
+            string expected = "4";
+            string actual;
+
+            // act
+            testList.Add(value1);
+            actual = testList.ToString();
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void ToString_MultipleItemIntFromList_ReturnMultipleItemAsString()
+        {
+            // arrange
+            CustomList<int> testList = new CustomList<int>(); 
+            int value1 = 4;
+            int value2 = 6;
+            int value3 = 8;
+            string expected = "4, 6, 8";
+            string actual;
+
+            // act
+            testList.Add(value1);
+            testList.Add(value2);
+            testList.Add(value3);
+            actual = testList.ToString();
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void ToString_MultipleItemStringFromList_ReturnMultipleItemStringAsString()
+        {
+            // arrange
+            CustomList<string> testList = new CustomList<string>();
+            string value1 = "Go";
+            string value2 = "Pack";
+            string value3 = "Go";
+            string expected = "Go, Pack, Go";
+            string actual;
+
+            // act
+            testList.Add(value1);
+            testList.Add(value2);
+            testList.Add(value3);
+            actual = testList.ToString();
 
             // assert
             Assert.AreEqual(expected, actual);
