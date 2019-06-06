@@ -11,8 +11,12 @@ namespace CustomListClassProject
         static void Main(string[] args)
         {
             CustomList<int> customIntList = new CustomList<int>();
-
-            CustomList<string> customStringList = new CustomList<string>();
+            customIntList.Add(1);
+            customIntList.Add(7);
+            customIntList.Add(3);
+            customIntList.Add(4);
+            customIntList.Add(5);
+            customIntList.Add(6);
 
         }
     }

@@ -1,0 +1,7 @@
+C:\Users\palee\Desktop\CustomListClassProject\CustomListClass-Project\CustomListClassProject\obj\Debug\CustomListClassProject.csprojAssemblyReference.cache
+C:\Users\palee\Desktop\CustomListClassProject\CustomListClass-Project\CustomListClassProject\obj\Debug\CustomListClassProject.csproj.CoreCompileInputs.cache
+C:\Users\palee\Desktop\CustomListClassProject\CustomListClass-Project\CustomListClassProject\bin\Debug\CustomListClassProject.exe.config
+C:\Users\palee\Desktop\CustomListClassProject\CustomListClass-Project\CustomListClassProject\bin\Debug\CustomListClassProject.exe
+C:\Users\palee\Desktop\CustomListClassProject\CustomListClass-Project\CustomListClassProject\bin\Debug\CustomListClassProject.pdb
+C:\Users\palee\Desktop\CustomListClassProject\CustomListClass-Project\CustomListClassProject\obj\Debug\CustomListClassProject.exe
+C:\Users\palee\Desktop\CustomListClassProject\CustomListClass-Project\CustomListClassProject\obj\Debug\CustomListClassProject.pdb

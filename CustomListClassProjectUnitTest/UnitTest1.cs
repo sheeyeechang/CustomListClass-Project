@@ -19,12 +19,12 @@ namespace CustomListClassProjectUnitTest
             
             // act
             testList.Add(value1);
-            actual = testList.itemArray[0];
+            actual = testList[0];
 
             // assert
             Assert.AreEqual(expected, actual);
         }
-
+        [TestMethod]
         public void Add_AddItemStringToEmptyList_ItemGoesToIndexZero()
         {
             // arrange
@@ -35,7 +35,7 @@ namespace CustomListClassProjectUnitTest
 
             // act
             testList.Add(value1);
-            actual = testList.itemArray[0];
+            actual = testList[0];
 
             // assert
             Assert.AreEqual(expected, actual);
@@ -63,7 +63,9 @@ namespace CustomListClassProjectUnitTest
         // does the newly added item go to the correct spot? (index 5?)
 
 
-            //Add multiple items to an empty list
+        //Add multiple items to an empty list
+
+        [TestMethod]
         public void Add_AddThreeItemsIntToEmptyList_ReturnThreeItemListCount()
         {
 
@@ -87,6 +89,8 @@ namespace CustomListClassProjectUnitTest
         }
 
         //Add item greater than capacity
+
+        [TestMethod]
         public void Add_AddItemsIntGreaterThanCapacity_ReturnItemListCount()
         {
             // arrange
@@ -117,6 +121,7 @@ namespace CustomListClassProjectUnitTest
             Assert.AreEqual(expected, actual);
         }
         // Test if value in the right spot
+        [TestMethod]
         public void Add_AddItemsIntGreaterThanCapacity_ReturnItemListCountSort()
         {
             // arrange

@@ -30,22 +30,35 @@ namespace CustomListClassProject
             itemArray = new T[capacity];
         }
 
+        // C# indexer so that I can make the objects in my list accessible via index. A user cannot access an out-of-bounds index.
+
+            public T this [int i]
+        {
+            get
+            {
+                return itemArray[i];
+            }
+            set
+            {
+                itemArray[i] = value;
+            }
+        }
+
         // Member method
         //ADD TESTS: 6 total 
         //Add method: adds an input value to an array.
 
         public void Add(T item)
         {
-            CustomList<T> testList = new CustomList<T>();
-            count = capacity;
-            for (int i = 0; i < count; i++)
-            {
-                itemArray = new T[count];
-            }
+            itemArray[count] = item;
+            count++;
+            
+            // if we run out room (capacity)
+            // increase capacity, make new bigger array
+            // fill up array, reassign to member variable array
         }
-      
 
-        // C# indexer so that I can make the objects in my list accessible via index. A user cannot access an out-of-bounds index.
+    
 
 
 
