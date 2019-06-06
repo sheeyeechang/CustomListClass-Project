@@ -359,5 +359,97 @@ namespace CustomListClassProjectUnitTest
             // assert
             Assert.AreEqual(expected, actual);
         }
+        // Overload the + operator: 3 total  -------------------------------------------------------------------
+        [TestMethod]
+        public void Overload_AddTwoCustomList_ReturnItemIdexTwo()
+        {
+            // arrange
+            CustomList<int> testList1 = new CustomList<int>();
+            testList1.Add(1);
+            testList1.Add(3);
+            testList1.Add(5);
+            CustomList<int> testList2 = new CustomList<int>();
+            testList1.Add(2);
+            testList1.Add(4);
+            testList1.Add(6);
+            CustomList<int> expectedResult = new CustomList<int>();
+            testList1.Add(1);
+            testList1.Add(3);
+            testList1.Add(5);
+            testList1.Add(2);
+            testList1.Add(4);
+            testList1.Add(6);
+            int expected = 5;
+            int actual;
+
+            // act
+            CustomList<int> result = testList1 + testList2;
+            actual = expectedResult[2];
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Overload_AddTwoCustomList_ReturnItemIdexFive()
+        {
+            // arrange
+            CustomList<int> testList1 = new CustomList<int>();
+            testList1.Add(1);
+            testList1.Add(3);
+            testList1.Add(5);
+            CustomList<int> testList2 = new CustomList<int>();
+            testList1.Add(2);
+            testList1.Add(4);
+            testList1.Add(6);
+            CustomList<int> expectedResult = new CustomList<int>();
+            testList1.Add(1);
+            testList1.Add(3);
+            testList1.Add(5);
+            testList1.Add(2);
+            testList1.Add(4);
+            testList1.Add(6);
+            int expected = 6;
+            int actual;
+
+            // act
+            CustomList<int> result = testList1 + testList2;
+            actual = expectedResult[5];
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Overload_AddTwoCustomList_ReturnAddTwoCustomCount()
+        {
+            // arrange
+            CustomList<int> testList1 = new CustomList<int>();
+            testList1.Add(1);
+            testList1.Add(3);
+            testList1.Add(5);
+            CustomList<int> testList2 = new CustomList<int>();
+            testList1.Add(2);
+            testList1.Add(4);
+            testList1.Add(6);
+            CustomList<int> expectedResult = new CustomList<int>();
+            testList1.Add(1);
+            testList1.Add(3);
+            testList1.Add(5);
+            testList1.Add(2);
+            testList1.Add(4);
+            testList1.Add(6);
+            int expected = 6;
+            int actual;
+
+            // act
+            CustomList<int> result = testList1 + testList2;
+            actual = expectedResult.Count;
+            // assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
+
+
+
     }
 }
