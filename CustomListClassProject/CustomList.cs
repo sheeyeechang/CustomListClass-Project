@@ -32,7 +32,7 @@ namespace CustomListClassProject
 
         // C# indexer so that I can make the objects in my list accessible via index. A user cannot access an out-of-bounds index.
 
-            public T this [int i]
+        public T this [int i]
         {
             get
             {
@@ -49,16 +49,49 @@ namespace CustomListClassProject
         //Add method: adds an input value to an array.
 
         public void Add(T item)
-        {
-            itemArray[count] = item;
-            count++;
+        {            
+            if (count == capacity)  //this happen if over capacity
+            {
+                capacity*=2;  //add double to capacity // increase capacity, make new bigger array
+                T[] item2Array = new T[capacity];  //create new array
+                for (int i = 0; i < count; i++)
+                {
+                    item2Array[i] = itemArray[i];  //new array copy old array
+                }
+                item2Array[count] = item;  //new array count add the new value
+                itemArray = item2Array;  // fill up array, reassign to member variable array
+                count++;
+            }
+            else
+            {
+                itemArray[count] = item;
+                count++;
+            }
+
+
             
-            // if we run out room (capacity)
-            // increase capacity, make new bigger array
-            // fill up array, reassign to member variable array
+            
+            
         }
 
-    
+
+
+
+        //public CustomList<T> Zip(CustomList<T> listOne, CustomList<T> listTwo)
+        //{
+        //    CustomList<T> finalResult = new CustomList<T>();
+        //    if (listOne.count != 0)
+        //    {
+        //        for (int i = 0; i < listOne.count; i++)
+        //        {
+        //            finalResult.Add(listOne[i]);
+        //            finalResult.Add(listTwo[i]);
+        //        }
+        //    }
+        //    return finalResult;
+
+        
+
 
 
 
