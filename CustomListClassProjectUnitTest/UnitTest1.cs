@@ -151,5 +151,116 @@ namespace CustomListClassProjectUnitTest
             // assert
             Assert.AreEqual(expected, actual);
         }
+
+        //REMOVE TESTS:  5 total
+        [TestMethod]
+        public void Remove_RemoveItemIntFromList_ReturnItemIndexOneToIndexZero()
+        {
+            // arrange
+            CustomList<int> testList = new CustomList<int>(); //need to add value before remove value
+            int value1 = 4;
+            int value2 = 6;
+            int expected = 6;
+            int actual;
+
+            // act
+            testList.Add(value1);
+            testList.Add(value2);
+            testList.Remove(value1);
+            actual = testList[0];
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Remove_RemoveItemStringFromList_ReturnItemIndexOneToIndexZero()
+        {
+            // arrange
+            CustomList<string> testList = new CustomList<string>();
+            string value1 = "Mike";
+            string value2 = "Bob";
+            string expected = "Bob";
+            string actual;
+
+            // act
+            testList.Add(value1);
+            testList.Add(value2);
+            testList.Remove(value1);
+            actual = testList[0];
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Remove_RemoveOneItemIntFromList_RemoveOneItemFromTheCount()
+        {
+            // arrange
+            CustomList<int> testList = new CustomList<int>(); //need to add value before remove value
+            int value1 = 4;
+            int value2 = 6;
+            int value3 = 7;
+            int expected = 2;
+            int actual;
+
+            // act
+            testList.Add(value1);
+            testList.Add(value2);
+            testList.Add(value3);
+            testList.Remove(value1);
+            actual = testList.Count;
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Remove_RemoveThreeItemIntFromList_RemoveThreeItemFromTheCount()
+        {
+            // arrange
+            CustomList<int> testList = new CustomList<int>(); //need to add value before remove value
+            int value1 = 4;
+            int value2 = 6;
+            int value3 = 7;
+            int value4 = 5;
+            int expected = 1;
+            int actual;
+
+            // act
+            testList.Add(value1);
+            testList.Add(value2);
+            testList.Add(value3);
+            testList.Add(value4);
+            testList.Remove(value1);
+            testList.Remove(value2);
+            testList.Remove(value4);
+            actual = testList.Count;
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Remove_RemoveItemIntFromMiddleOfList_RemoveOneItemFromTheCount()
+        {
+            // arrange
+            CustomList<int> testList = new CustomList<int>(); //need to add value before remove value
+            int value1 = 4;
+            int value2 = 6;
+            int value3 = 7;
+            int expected = 2;
+            int actual;
+
+            // act
+            testList.Add(value1);
+            testList.Add(value2);
+            testList.Add(value3);
+            testList.Remove(value2);
+            actual = testList.Count;
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

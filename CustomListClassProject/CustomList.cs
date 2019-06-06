@@ -45,8 +45,7 @@ namespace CustomListClassProject
         }
 
         // Member method
-        //ADD TESTS: 6 total 
-        //Add method: adds an input value to an array.
+        //Add method: adds an input value to an array. // method ability to add an object 
 
         public void Add(T item)
         {            
@@ -66,14 +65,14 @@ namespace CustomListClassProject
             {
                 itemArray[count] = item;
                 count++;
-            }
-
-
-            
-            
-            
+            }  
         }
 
+        //Remove method: remove an input value from an array. // method ability to remove an object
+        public void Remove(T item)
+        {
+
+        }
 
 
 
@@ -89,20 +88,6 @@ namespace CustomListClassProject
         //        }
         //    }
         //    return finalResult;
-
-        
-
-
-
-
-        // method ability to add an object 
-
-
-
-        // method ability to remove an object
-
-
-
 
 
         // override the ToString method that converts the contents of the custom list to a string.
