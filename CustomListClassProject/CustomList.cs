@@ -8,7 +8,7 @@ namespace CustomListClassProject
 {
     public class CustomList<T> 
     {
-        //Member variable
+        //Member variable  --------------------------------------------------------------------------------
         //Array
         private T[] itemArray = new T[5];
 
@@ -19,9 +19,7 @@ namespace CustomListClassProject
         private int capacity;
         // Capacity property: publicly see the size of my private array. ---write = set
         public int Capacity { get { return capacity; } set { count = value; } }
-
-
-        //Constructor
+        //Constructor  -----------------------------------------------------------------------------------
         public CustomList()
         {
             count = 0;
@@ -29,9 +27,7 @@ namespace CustomListClassProject
 
             itemArray = new T[capacity];
         }
-
         // C# indexer so that I can make the objects in my list accessible via index. A user cannot access an out-of-bounds index.
-
         public T this[int i]
         {
             get
@@ -43,10 +39,8 @@ namespace CustomListClassProject
                 itemArray[i] = value;
             }
         }
-
-        // Member method
-        //Add method: adds an input value to an array. // method ability to add an object 
-
+        // Member method  -------------------------------------------------------------------------------------------
+        //Add method: adds an input value to an array. // method ability to add an object  -------------------------
         public void Add(T item)
         {
             if (count == capacity)  //this happen if over capacity
@@ -67,8 +61,7 @@ namespace CustomListClassProject
                 count++;
             }
         }
-
-        //Remove method: remove an input value from an array. // method ability to remove an object
+        //Remove method: remove an input value from an array. // method ability to remove an object  ---------------------
         public void Remove(T item)
         {
             int j = 0;                      //set new variable
@@ -81,17 +74,16 @@ namespace CustomListClassProject
                 {
                     item2Array[j] = itemArray[i];
                     j++;         
-                } else
+                }
+                else
                 {
                     tempCount++;
                 }
             }
             itemArray = item2Array;         //reassign to member variable ar      
             count -= tempCount;         // count = count - tempCount
-
         }
-
-        // override the ToString method that converts the contents of the custom list to a string.
+        // override the ToString method that converts the contents of the custom list to a string.  ---------------------
         public override string ToString()
         {
             string itemString = "";
@@ -99,8 +91,7 @@ namespace CustomListClassProject
             {
                 if (i == 0)
                 {
-                    itemString += $"{itemArray[i]}";
-                    
+                    itemString += $"{itemArray[i]}";                    
                 }
                 else
                 {
@@ -109,9 +100,7 @@ namespace CustomListClassProject
             }
             return itemString;
         }
-
-
-        // be able to overload the + operator, 
+        // be able to overload the + operator  ---------------------------------------------------------------------
         public static CustomList<T> operator + (CustomList<T> testList1, CustomList<T> testList2)
         {
             CustomList<T> testListFinal = new CustomList<T>();     //create new list or object
@@ -125,7 +114,6 @@ namespace CustomListClassProject
             }
             return (testListFinal);
         }
-
         // Overload + operator to add two Box objects.
         //public static Box operator +(Box b, Box c)
         //{
@@ -136,21 +124,23 @@ namespace CustomListClassProject
         //    return box;
         //}
 
-        // be able to overload the – operator
-        //public static CustomList<T> operator -(CustomList<T> testList1, CustomList<T> testList2)
-        //{
-
-        //    return;
-        //}
-
-
-
-
-        //, I want to be able to overload the – operator, so that I can subtract one instance of a custom list class from another instance of a custom list class.
-        //List<int> one = new List<int>() {1,3,5}; and List<int> two = new List<int>() { 2, 1, 6 };
-        //List<int> result = one - two;
-        //result has 3,5
-
+        // be able to overload the – operator  ----------------------------------------------------------------------
+        public static CustomList<T> operator -(CustomList<T> testList1, CustomList<T> testList2)
+        {
+            CustomList<T> testListFinal = new CustomList<T>();     //create new list or object
+            for (int i = 0; i < testList1.count; i++)              // for loop for list 1
+            {
+                for (int j = 0; j < testList2.count; j++)           // for loop for list 2
+                {
+                    if (testList2.itemArray[j].Equals(testList1.itemArray[i])) // if list 2 item equal list 1 item
+                    {
+                        testList1.Remove(testList1.itemArray[i]);       // do remove item from List 1
+                    }
+                }
+                testListFinal = testList1;      //rename variable
+            }
+            return testListFinal;
+        }
 
 
         //public CustomList<T> Zip(CustomList<T> listOne, CustomList<T> listTwo)

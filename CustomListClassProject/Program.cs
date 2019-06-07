@@ -30,14 +30,19 @@ namespace CustomListClassProject
             CustomList<int> testList1 = new CustomList<int>();
             testList1.Add(1);
             testList1.Add(3);
+            testList1.Add(4);
             testList1.Add(5);
             CustomList<int> testList2 = new CustomList<int>();
             testList2.Add(2);
+            testList2.Add(1);
             testList2.Add(4);
             testList2.Add(6);
             // act
             CustomList<int> result = testList1 + testList2;
+
             // operator -           ------------------------------------------------------------------------------
+            // act
+            CustomList<int> result2 = testList1 - testList2;
         }
     }
 }
