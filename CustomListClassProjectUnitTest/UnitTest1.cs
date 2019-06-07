@@ -546,7 +546,7 @@ namespace CustomListClassProjectUnitTest
             int actual;
 
             // act
-            CustomList<int> result = testListOdd.Zip(testListEven);
+            CustomList<int> result = CustomList<int>.Zip(testListOdd, testListEven);  // cannot do list 1 - or + list 2 for Zip like operator
             actual = expectedResult[0];
             // assert
             Assert.AreEqual(expected, actual);
@@ -574,7 +574,7 @@ namespace CustomListClassProjectUnitTest
             int actual;
 
             // act
-            CustomList<int> result = testListOdd.Zip(testListEven);
+            CustomList<int> result = CustomList<int>.Zip(testListOdd, testListEven);  // cannot do list 1 - or + list 2 for Zip like operator
             actual = expectedResult[3];
             // assert
             Assert.AreEqual(expected, actual);
@@ -602,7 +602,7 @@ namespace CustomListClassProjectUnitTest
             int actual;
 
             // act
-            CustomList<int> result = testListOdd.Zip(testListEven);
+            CustomList<int> result = CustomList<int>.Zip(testListOdd, testListEven);  // cannot do list 1 - or + list 2 for Zip like operator
             actual = expectedResult[5];
             // assert
             Assert.AreEqual(expected, actual);
@@ -632,7 +632,7 @@ namespace CustomListClassProjectUnitTest
             // act
 
             // act
-            CustomList<int> result = testListOdd.Zip(testListEven);
+            CustomList<int> result = CustomList<int>.Zip(testListOdd, testListEven);  // cannot do list 1 - or + list 2 for Zip like operator
             actual = expectedResult.Count;
             // assert
             Assert.AreEqual(expected, actual);
@@ -658,7 +658,7 @@ namespace CustomListClassProjectUnitTest
             expectedResult.Add(6);
 
             // act
-            CustomList<int> actual = testListOdd.Zip(testListEven);
+            CustomList<int> actual = CustomList<int>.Zip(testListOdd, testListEven);  // cannot do list 1 - or + list 2 for Zip like operator
             //compare result to string
             string actualString = actual.ToString();
             string expectedString = expectedResult.ToString();

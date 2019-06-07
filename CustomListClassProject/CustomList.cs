@@ -142,7 +142,16 @@ namespace CustomListClassProject
             return testListResult;
         }
         //  Zip two custom  ----------------------------------------------------------------------------------------------------
-
+        public static CustomList<T> Zip (CustomList<T> testListOdd, CustomList<T> testLiistEven)
+        {
+            CustomList<T> testListResult = new CustomList<T>();     //create new list or object
+            for (int i = 0; i < testListOdd.count; i++)              // for loop for list 1
+            {
+                testListResult.Add(testListOdd[i]);                 // add List 1
+                testListResult.Add(testLiistEven[i]);                 // add List 2
+            }
+            return testListResult;
+        }
 
 
 
