@@ -522,9 +522,150 @@ namespace CustomListClassProjectUnitTest
             // assert
             Assert.AreEqual(expected, actual);
         }
+        //zip two custom: 5 total  ----------------------------------------------------------------------------------
+        [TestMethod]
+        public void Zip_ZipTwoCustomList_ReturnItemValueFromIdexZero()
+        {
+            // arrange
+            CustomList<int> testListOdd = new CustomList<int>();
+            testListOdd.Add(1);
+            testListOdd.Add(3);
+            testListOdd.Add(5);
+            CustomList<int> testListEven = new CustomList<int>();
+            testListEven.Add(2);
+            testListEven.Add(4);
+            testListEven.Add(6);
+            CustomList<int> expectedResult = new CustomList<int>();
+            expectedResult.Add(1);
+            expectedResult.Add(2);
+            expectedResult.Add(3);
+            expectedResult.Add(4);
+            expectedResult.Add(5);
+            expectedResult.Add(6);
+            int expected = 1;
+            int actual;
 
+            // act
+            CustomList<int> result = testListOdd.Zip(testListEven);
+            actual = expectedResult[0];
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Zip_ZipTwoCustomList_ReturnItemValueFromIdexThree()
+        {
+            // arrange
+            CustomList<int> testListOdd = new CustomList<int>();
+            testListOdd.Add(1);
+            testListOdd.Add(3);
+            testListOdd.Add(5);
+            CustomList<int> testListEven = new CustomList<int>();
+            testListEven.Add(2);
+            testListEven.Add(4);
+            testListEven.Add(6);
+            CustomList<int> expectedResult = new CustomList<int>();
+            expectedResult.Add(1);
+            expectedResult.Add(2);
+            expectedResult.Add(3);
+            expectedResult.Add(4);
+            expectedResult.Add(5);
+            expectedResult.Add(6);
+            int expected = 4;
+            int actual;
 
+            // act
+            CustomList<int> result = testListOdd.Zip(testListEven);
+            actual = expectedResult[3];
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Zip_ZipTwoCustomList_ReturnItemValueFromIdexFive()
+        {
+            // arrange
+            CustomList<int> testListOdd = new CustomList<int>();
+            testListOdd.Add(1);
+            testListOdd.Add(3);
+            testListOdd.Add(5);
+            CustomList<int> testListEven = new CustomList<int>();
+            testListEven.Add(2);
+            testListEven.Add(4);
+            testListEven.Add(6);
+            CustomList<int> expectedResult = new CustomList<int>();
+            expectedResult.Add(1);
+            expectedResult.Add(2);
+            expectedResult.Add(3);
+            expectedResult.Add(4);
+            expectedResult.Add(5);
+            expectedResult.Add(6);
+            int expected = 6;
+            int actual;
 
+            // act
+            CustomList<int> result = testListOdd.Zip(testListEven);
+            actual = expectedResult[5];
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Zip_ZipTwoCustomList_ReturnTwoCustomListCount()
+        {
+            // arrange
+            CustomList<int> testListOdd = new CustomList<int>();
+            testListOdd.Add(1);
+            testListOdd.Add(3);
+            testListOdd.Add(5);
+            CustomList<int> testListEven = new CustomList<int>();
+            testListEven.Add(2);
+            testListEven.Add(4);
+            testListEven.Add(6);
+            CustomList<int> expectedResult = new CustomList<int>();
+            expectedResult.Add(1);
+            expectedResult.Add(2);
+            expectedResult.Add(3);
+            expectedResult.Add(4);
+            expectedResult.Add(5);
+            expectedResult.Add(6);
+            int expected = 6;
+            int actual;
+
+            // act
+
+            // act
+            CustomList<int> result = testListOdd.Zip(testListEven);
+            actual = expectedResult.Count;
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Zip_ZipTwoCustomList_ReturnItemValueConvertToString()
+        {
+            // arrange
+            CustomList<int> testListOdd = new CustomList<int>();
+            testListOdd.Add(1);
+            testListOdd.Add(3);
+            testListOdd.Add(5);
+            CustomList<int> testListEven = new CustomList<int>();
+            testListEven.Add(2);
+            testListEven.Add(4);
+            testListEven.Add(6);
+            CustomList<int> expectedResult = new CustomList<int>();
+            expectedResult.Add(1);
+            expectedResult.Add(2);
+            expectedResult.Add(3);
+            expectedResult.Add(4);
+            expectedResult.Add(5);
+            expectedResult.Add(6);
+
+            // act
+            CustomList<int> actual = testListOdd.Zip(testListEven);
+            //compare result to string
+            string actualString = actual.ToString();
+            string expectedString = expectedResult.ToString();
+
+            // assert
+            Assert.AreEqual(expectedString, actualString);
+        }
 
 
     }

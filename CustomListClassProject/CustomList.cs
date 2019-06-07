@@ -83,7 +83,7 @@ namespace CustomListClassProject
             itemArray = item2Array;         //reassign to member variable ar      
             count -= tempCount;         // count = count - tempCount
         }
-        // override the ToString method that converts the contents of the custom list to a string.  ---------------------
+        // override the ToString method that converts the contents of the custom list to a string.  -----------------------------
         public override string ToString()
         {
             string itemString = "";
@@ -100,19 +100,19 @@ namespace CustomListClassProject
             }
             return itemString;
         }
-        // be able to overload the + operator  ---------------------------------------------------------------------
+        // overload the + operator  ----------------------------------------------------------------------------
         public static CustomList<T> operator + (CustomList<T> testList1, CustomList<T> testList2)
         {
-            CustomList<T> testListFinal = new CustomList<T>();     //create new list or object
+            CustomList<T> testListResult = new CustomList<T>();     //create new list or object
             for (int i = 0; i < testList1.count; i++)
             {
-                testListFinal.Add(testList1.itemArray[i]);      // add list 1
+                testListResult.Add(testList1.itemArray[i]);      // add list 1
             }
             for (int j = 0; j < testList2.count; j++)
             {
-                testListFinal.Add(testList2.itemArray[j]);      // add list 2
+                testListResult.Add(testList2.itemArray[j]);      // add list 2
             }
-            return (testListFinal);
+            return testListResult;
         }
         // Overload + operator to add two Box objects.
         //public static Box operator +(Box b, Box c)
@@ -124,10 +124,10 @@ namespace CustomListClassProject
         //    return box;
         //}
 
-        // be able to overload the – operator  ----------------------------------------------------------------------
+        // overload the – operator  ------------------------------------------------------------------------------------------
         public static CustomList<T> operator -(CustomList<T> testList1, CustomList<T> testList2)
         {
-            CustomList<T> testListFinal = new CustomList<T>();     //create new list or object
+            CustomList<T> testListResult = new CustomList<T>();     //create new list or object
             for (int i = 0; i < testList1.count; i++)              // for loop for list 1
             {
                 for (int j = 0; j < testList2.count; j++)           // for loop for list 2
@@ -137,29 +137,16 @@ namespace CustomListClassProject
                         testList1.Remove(testList1.itemArray[i]);       // do remove item from List 1
                     }
                 }
-                testListFinal = testList1;      //rename variable
+                testListResult = testList1;      //rename variable
             }
-            return testListFinal;
+            return testListResult;
         }
+        //  Zip two custom  ----------------------------------------------------------------------------------------------------
 
 
-        //public CustomList<T> Zip(CustomList<T> listOne, CustomList<T> listTwo)
-        //{
-        //    CustomList<T> finalResult = new CustomList<T>();
-        //    if (listOne.count != 0)
-        //    {
-        //        for (int i = 0; i < listOne.count; i++)
-        //        {
-        //            finalResult.Add(listOne[i]);
-        //            finalResult.Add(listTwo[i]);
-        //        }
-        //    }
-        //    return finalResult;
 
-        // I want the ability to zip two custom list class instances together in the form of a zipper. An example:
-        //I have List<int> odd = new List<int>() {1,3,5}; and List<int> even = new List<int>() { 2, 4, 6 }; 
-        //odd.Zip(even);
-        //When lists odd and even are zipped together, your new list will contain values 1,2,3,4,5,6
+
+
 
         //custom list class to be iterable.
 
