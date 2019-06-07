@@ -112,45 +112,66 @@ namespace CustomListClassProject
 
 
         // be able to overload the + operator, 
-        public static CustomList<T> operator + (CustomList<T> One, CustomList<T> Two)
+        public static CustomList<T> operator + (CustomList<T> testList1, CustomList<T> testList2)
         {
-
+            CustomList<T> testListFinal = new CustomList<T>();     //create new list or object
+            for (int i = 0; i < testList1.count; i++)
+            {
+                testListFinal.Add(testList1.itemArray[i]);      // add list 1
+            }
+            for (int j = 0; j < testList2.count; j++)
+            {
+                testListFinal.Add(testList2.itemArray[j]);      // add list 2
+            }
+            return (testListFinal);
         }
 
-            //so that I can add two instances of the custom list class together.
-            //List<int> one = new List<int>() {1,3,5}; and List<int> two = new List<int>() { 2, 4, 6 };
-            //List<int> result = one + two;
-            //result has 1,3,5,2,4,6
+        // Overload + operator to add two Box objects.
+        //public static Box operator +(Box b, Box c)
+        //{
+        //    Box box = new Box();
+        //    box.length = b.length + c.length;
+        //    box.breadth = b.breadth + c.breadth;
+        //    box.height = b.height + c.height;
+        //    return box;
+        //}
+
+        // be able to overload the – operator
 
 
-            //, I want to be able to overload the – operator, so that I can subtract one instance of a custom list class from another instance of a custom list class.
-            //List<int> one = new List<int>() {1,3,5}; and List<int> two = new List<int>() { 2, 1, 6 };
-            //List<int> result = one - two;
-            //result has 3,5
-
-            //public CustomList<T> Zip(CustomList<T> listOne, CustomList<T> listTwo)
-            //{
-            //    CustomList<T> finalResult = new CustomList<T>();
-            //    if (listOne.count != 0)
-            //    {
-            //        for (int i = 0; i < listOne.count; i++)
-            //        {
-            //            finalResult.Add(listOne[i]);
-            //            finalResult.Add(listTwo[i]);
-            //        }
-            //    }
-            //    return finalResult;
-
-            // I want the ability to zip two custom list class instances together in the form of a zipper. An example:
-            //I have List<int> odd = new List<int>() {1,3,5}; and List<int> even = new List<int>() { 2, 4, 6 }; 
-            //odd.Zip(even);
-            //When lists odd and even are zipped together, your new list will contain values 1,2,3,4,5,6
-
-            //custom list class to be iterable.
-
-            //
 
 
-        }
+
+        //, I want to be able to overload the – operator, so that I can subtract one instance of a custom list class from another instance of a custom list class.
+        //List<int> one = new List<int>() {1,3,5}; and List<int> two = new List<int>() { 2, 1, 6 };
+        //List<int> result = one - two;
+        //result has 3,5
+
+
+
+        //public CustomList<T> Zip(CustomList<T> listOne, CustomList<T> listTwo)
+        //{
+        //    CustomList<T> finalResult = new CustomList<T>();
+        //    if (listOne.count != 0)
+        //    {
+        //        for (int i = 0; i < listOne.count; i++)
+        //        {
+        //            finalResult.Add(listOne[i]);
+        //            finalResult.Add(listTwo[i]);
+        //        }
+        //    }
+        //    return finalResult;
+
+        // I want the ability to zip two custom list class instances together in the form of a zipper. An example:
+        //I have List<int> odd = new List<int>() {1,3,5}; and List<int> even = new List<int>() { 2, 4, 6 }; 
+        //odd.Zip(even);
+        //When lists odd and even are zipped together, your new list will contain values 1,2,3,4,5,6
+
+        //custom list class to be iterable.
+
+        //
+
+
+    }
 
 }

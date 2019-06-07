@@ -25,6 +25,8 @@ namespace CustomListClassProject
             //ToString
             Console.WriteLine(customIntList.ToString());
             Console.ReadLine();
+            // operator +
+            
         }
     }
 }
