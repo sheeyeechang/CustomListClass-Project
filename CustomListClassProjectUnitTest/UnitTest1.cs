@@ -152,7 +152,7 @@ namespace CustomListClassProjectUnitTest
             Assert.AreEqual(expected, actual);
         }
 
-        //REMOVE TESTS: 5 total  -----------------------------------------------------------
+        //REMOVE TESTS: 5 total  ---------------------------------------------------------------------------------------
         [TestMethod]
         public void Remove_RemoveItemIntFromList_ReturnItemIndexOneToIndexZero()
         {
@@ -285,7 +285,7 @@ namespace CustomListClassProjectUnitTest
             Assert.AreEqual(expected, actual);
         }
 
-        //ToString: 4 total  -------------------------------------------------------------------------------
+        //ToString: 4 total  --------------------------------------------------------------------------------------------
         [TestMethod]
         public void ToString_ItemFromListWithNoValue_ReturnItemWithNoValueAsString()
         {
@@ -359,7 +359,7 @@ namespace CustomListClassProjectUnitTest
             // assert
             Assert.AreEqual(expected, actual);
         }
-        // Overload the + operator: 3 total  -------------------------------------------------------------------
+        // Overload the + operator: 3 total  ----------------------------------------------------------------------------
         [TestMethod]
         public void Overload_AddTwoCustomList_ReturnItemIdexTwo()
         {
@@ -447,7 +447,7 @@ namespace CustomListClassProjectUnitTest
             Assert.AreEqual(expected, actual);
 
         }
-        // Overload the - operator: 3 total  -------------------------------------------------------------------
+        // Overload the - operator: 3 total  -----------------------------------------------------------------------------
         [TestMethod]
         public void Overload_MinusOneItemFromTwoCustomList_ReturnItemIdexZero()
         {
@@ -522,7 +522,7 @@ namespace CustomListClassProjectUnitTest
             // assert
             Assert.AreEqual(expected, actual);
         }
-        //zip two custom: 5 total  ----------------------------------------------------------------------------------
+        //zip two custom: 5 total  -----------------------------------------------------------------------------------------
         [TestMethod]
         public void Zip_ZipTwoCustomList_ReturnItemValueFromIdexZero()
         {

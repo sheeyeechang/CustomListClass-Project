@@ -44,10 +44,16 @@ namespace CustomListClassProject
             // act
             CustomList<int> result2 = testList1 - testList2;
 
-            // zip two custom list
+            // zip two custom list  -------------------------------------------------------------------------------------
             //act
             CustomList<int> actual = CustomList<int>.Zip(testList1, testList2);
 
+            //custom list class to be iterable.  -----------------------------------------------------------------------
+            foreach(int number in result)
+            {
+                Console.WriteLine(number);               
+            }
+            Console.ReadLine();
         }
     }
 }

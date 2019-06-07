@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace CustomListClassProject
 {
-    public class CustomList<T> 
+    public class CustomList<T> : IEnumerable
     {
-        //Member variable  --------------------------------------------------------------------------------
+        //Member variable  ------------------------------------------------------------------------------------------
         //Array
         private T[] itemArray = new T[5];
 
@@ -19,7 +20,7 @@ namespace CustomListClassProject
         private int capacity;
         // Capacity property: publicly see the size of my private array. ---write = set
         public int Capacity { get { return capacity; } set { count = value; } }
-        //Constructor  -----------------------------------------------------------------------------------
+        //Constructor  ------------------------------------------------------------------------------------------------
         public CustomList()
         {
             count = 0;
@@ -34,13 +35,16 @@ namespace CustomListClassProject
             {
                 return itemArray[i];
             }
-            set
+            set 
             {
-                itemArray[i] = value;
+                if (count >= 0)
+                {
+                    itemArray[i] = value;
+                }
             }
         }
-        // Member method  -------------------------------------------------------------------------------------------
-        //Add method: adds an input value to an array. // method ability to add an object  -------------------------
+        // Member method  --------------------------------------------------------------------------------------------
+        //Add method: adds an input value to an array. // method ability to add an object  ---------------------------
         public void Add(T item)
         {
             if (count == capacity)  //this happen if over capacity
@@ -100,7 +104,7 @@ namespace CustomListClassProject
             }
             return itemString;
         }
-        // overload the + operator  ----------------------------------------------------------------------------
+        // overload the + operator  -----------------------------------------------------------------------------------
         public static CustomList<T> operator + (CustomList<T> testList1, CustomList<T> testList2)
         {
             CustomList<T> testListResult = new CustomList<T>();     //create new list or object
@@ -153,15 +157,19 @@ namespace CustomListClassProject
             return testListResult;
         }
 
+        //custom list class to be iterable.  ---------------------------------------------------------------------------
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i < count; i++)
+            {
+                yield return itemArray[i];
+            }
+        }
 
-
-
-
-        //custom list class to be iterable.
-
-        //
-
-
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return (IEnumerator) GetEnumerator();
+        }
     }
 
 }
