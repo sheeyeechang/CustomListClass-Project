@@ -137,7 +137,11 @@ namespace CustomListClassProject
         //}
 
         // be able to overload the – operator
+        //public static CustomList<T> operator -(CustomList<T> testList1, CustomList<T> testList2)
+        //{
 
+        //    return;
+        //}
 
 
 
