@@ -29,7 +29,7 @@ namespace CustomListClassProject
             itemArray = new T[capacity];
         }
         // C# indexer so that I can make the objects in my list accessible via index. A user cannot access an out-of-bounds index.
-        public T this[int i]
+        public T this[int i]            // It is identifiable as an indexer by the use of "this". 
         {
             get
             {
@@ -37,9 +37,13 @@ namespace CustomListClassProject
             }
             set 
             {
-                if (count >= 0)
+                if (count >= i && i >= 0)       // count greater than i and i greater than 0
                 {
                     itemArray[i] = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException("i must be less than count and greater than 0.");
                 }
             }
         }
