@@ -55,9 +55,10 @@ namespace CustomListClassProject
             }
 
             //C# indexer out-of-bounds/range index.
-            Console.WriteLine(customIntList[0]);
+            Console.WriteLine(customIntList[2]);
             Console.ReadLine();
-            customIntList[0] = 3;
+            customIntList[1] = 7;
+            Console.WriteLine(customIntList[1]);
             Console.ReadLine();
         }
     }

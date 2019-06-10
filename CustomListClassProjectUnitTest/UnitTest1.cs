@@ -666,35 +666,91 @@ namespace CustomListClassProjectUnitTest
             // assert
             Assert.AreEqual(expectedString, actualString);
         }
-        //Sort two custom: 5 total  -----------------------------------------------------------------------------------------
-        //[TestMethod]
-        //public void Sort_SortTwoCustomList_ReturnItemValueFromIdexZero()
-        //{
-        //    // arrange
-        //    CustomList<int> testListOdd = new CustomList<int>();
-        //    testListOdd.Add(1);
-        //    testListOdd.Add(3);
-        //    testListOdd.Add(5);
-        //    CustomList<int> testListEven = new CustomList<int>();
-        //    testListEven.Add(2);
-        //    testListEven.Add(4);
-        //    testListEven.Add(6);
-        //    CustomList<int> expectedResult = new CustomList<int>();
-        //    expectedResult.Add(1);
-        //    expectedResult.Add(2);
-        //    expectedResult.Add(3);
-        //    expectedResult.Add(4);
-        //    expectedResult.Add(5);
-        //    expectedResult.Add(6);
-        //    int expected = 1;
-        //    int actual;
+        //Sort one custom: 4 total  --------------------------------------------extra credit-----------------------------------------
+        [TestMethod]
+        public void Sort_SortCustomList_ReturnItemValueFromIdexZero()
+        {
+            // arrange
+            CustomList<int> testList1 = new CustomList<int>();
+            testList1.Add(4);
+            testList1.Add(3);
+            testList1.Add(5);
+            testList1.Add(2);
+            testList1.Add(1);
+            testList1.Add(6);
 
-        //    // act
-        //    CustomList<int> result = CustomList<int>.Sort(testListOdd, testListEven);  // cannot do list 1 - or + list 2 for Zip like operator
-        //    actual = expectedResult[0];
-        //    // assert
-        //    Assert.AreEqual(expected, actual);
-        //}
+            int expected = 1;
+            int actual;
+
+            // act
+            expected = testList1.Sort();
+            actual = testList1[0];
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Sort_SortCustomList_ReturnItemValueFromIdexTwo()
+        {
+            // arrange
+            CustomList<int> testList1 = new CustomList<int>();
+            testList1.Add(4);
+            testList1.Add(3);
+            testList1.Add(5);
+            testList1.Add(2);
+            testList1.Add(1);
+            testList1.Add(6);
+
+            int expected = 3;
+            int actual;
+
+            // act
+            expected = testList1.Sort();
+            actual = testList1[2];
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Sort_SortCustomList_ReturnItemValueFromIdexFive()
+        {
+            // arrange
+            CustomList<int> testList1 = new CustomList<int>();
+            testList1.Add(4);
+            testList1.Add(3);
+            testList1.Add(5);
+            testList1.Add(2);
+            testList1.Add(1);
+            testList1.Add(6);
+
+            int expected = 6;
+            int actual;
+
+            // act
+            expected = testList1.Sort();
+            actual = testList1[5];
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Sort_SortCustomList_ReturnCustomListCount()
+        {
+            // arrange
+            CustomList<int> testList1 = new CustomList<int>();
+            testList1.Add(4);
+            testList1.Add(3);
+            testList1.Add(5);
+            testList1.Add(2);
+            testList1.Add(1);
+            testList1.Add(6);
+
+            int expected = 6;
+            int actual;
+
+            // act
+            expected = testList1.Sort();
+            actual = testList1.Count;
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
 
     }
 }
