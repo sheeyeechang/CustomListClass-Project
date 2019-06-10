@@ -184,19 +184,19 @@ namespace CustomListClassProject
 
         //  Sort one custom list  --------------------------------------extra credit-----------------------------------------------------------
         //  Using Quicksort algorithm 
-        public CustomList<int> Sort()
+        public CustomList<int> Sort(CustomList<int> testList1)
         {
             CustomList<int> testListResult = new CustomList<int>();     //create new list or object
             int tempArray = 0;
-            for (int i = 0; i < testListResult.count; i++)              // for loop for i
+            for (int i = 0; i < testList1.count; i++)              // for loop for i
             {
-                for (int j = 0; j < testListResult.count; j++)          // for loop for J
+                for (int j = 0; j < testList1.count; j++)          // for loop for J
                 {
-                    if (testListResult.itemArray[i] < testListResult.itemArray[j])          // i < j
+                    if (testList1.itemArray[i] < testList1.itemArray[j])          // i < j
                     {
-                        tempArray = testListResult.itemArray[i];                            //swap
-                        testListResult.itemArray[i] = testListResult.itemArray[j];
-                        testListResult.itemArray[j] = tempArray;
+                        tempArray = testList1.itemArray[i];                            //swap
+                        testList1.itemArray[i] = testList1.itemArray[j];
+                        testList1.itemArray[j] = tempArray;
                     }
                 }
             }
