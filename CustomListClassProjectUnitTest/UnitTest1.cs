@@ -683,7 +683,7 @@ namespace CustomListClassProjectUnitTest
             int actual;
 
             // act
-            expected = testList1.Sort();
+            CustomList<int> result = testList1.Sort();
             actual = testList1[0];
             // assert
             Assert.AreEqual(expected, actual);
@@ -704,7 +704,7 @@ namespace CustomListClassProjectUnitTest
             int actual;
 
             // act
-            expected = testList1.Sort();
+            CustomList<int> result = testList1.Sort();
             actual = testList1[2];
             // assert
             Assert.AreEqual(expected, actual);
@@ -725,7 +725,7 @@ namespace CustomListClassProjectUnitTest
             int actual;
 
             // act
-            expected = testList1.Sort();
+            CustomList<int> result = testList1.Sort();
             actual = testList1[5];
             // assert
             Assert.AreEqual(expected, actual);
@@ -746,7 +746,7 @@ namespace CustomListClassProjectUnitTest
             int actual;
 
             // act
-            expected = testList1.Sort();
+            CustomList<int> result = testList1.Sort();
             actual = testList1.Count;
             // assert
             Assert.AreEqual(expected, actual);

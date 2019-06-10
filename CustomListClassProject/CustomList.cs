@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomListClassProject
 {
-    public class CustomList<T> : IEnumerable
+    public class CustomList<T> : IEnumerable/*, IComparable*/
     {
         //Member variable  ------------------------------------------------------------------------------------------
         //Array
@@ -42,7 +42,7 @@ namespace CustomListClassProject
                     throw new ArgumentOutOfRangeException("i must be less than count and greater than 0.");
                 }
             }
-            set 
+            set
             {
                 if (i <= count && i >= 0)       // count greater than i and i greater than 0
                 {
@@ -83,12 +83,12 @@ namespace CustomListClassProject
             int tempCount = 0;               //set temp count = 0 or tempCOunt = count   
 
             T[] item2Array = new T[capacity];  //create new array
-            for (int i = 0; i < count; i++)     
+            for (int i = 0; i < count; i++)
             {
                 if (!item.Equals(itemArray[i])) // if item not equal, do add item
                 {
                     item2Array[j] = itemArray[i];
-                    j++;         
+                    j++;
                 }
                 else
                 {
@@ -106,7 +106,7 @@ namespace CustomListClassProject
             {
                 if (i == 0)
                 {
-                    itemString += $"{itemArray[i]}";                    
+                    itemString += $"{itemArray[i]}";
                 }
                 else
                 {
@@ -116,7 +116,7 @@ namespace CustomListClassProject
             return itemString;
         }
         // overload the + operator  -----------------------------------------------------------------------------------
-        public static CustomList<T> operator + (CustomList<T> testList1, CustomList<T> testList2)
+        public static CustomList<T> operator +(CustomList<T> testList1, CustomList<T> testList2)
         {
             CustomList<T> testListResult = new CustomList<T>();     //create new list or object
             for (int i = 0; i < testList1.count; i++)
@@ -157,7 +157,7 @@ namespace CustomListClassProject
             return testListResult;
         }
         //  Zip two custom  ----------------------------------------------------------------------------------------------------
-        public static CustomList<T> Zip (CustomList<T> testListOdd, CustomList<T> testLiistEven)
+        public static CustomList<T> Zip(CustomList<T> testListOdd, CustomList<T> testLiistEven)
         {
             CustomList<T> testListResult = new CustomList<T>();     //create new list or object
             for (int i = 0; i < testListOdd.count; i++)              // for loop for list 1
@@ -179,25 +179,33 @@ namespace CustomListClassProject
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return (IEnumerator) GetEnumerator();
+            return (IEnumerator)GetEnumerator();
         }
 
         //  Sort one custom list  --------------------------------------extra credit-----------------------------------------------------------
-        //public static CustomList<T> Sort(CustomList<T> testListOdd, CustomList<T> testLiistEven)
+        //  Using Quicksort algorithm 
+        public CustomList<int> Sort()
+        {
+            CustomList<int> testListResult = new CustomList<int>();     //create new list or object
+            int tempArray = 0;
+            for (int i = 0; i < testListResult.count; i++)              // for loop for i
+            {
+                for (int j = 0; j < testListResult.count; j++)          // for loop for J
+                {
+                    if (testListResult.itemArray[i] < testListResult.itemArray[j])          // i < j
+                    {
+                        tempArray = testListResult.itemArray[i];                            //swap
+                        testListResult.itemArray[i] = testListResult.itemArray[j];
+                        testListResult.itemArray[j] = tempArray;
+                    }
+                }
+            }
+            return testListResult;
+        }
+        //public int CompareTo(object obj)
         //{
-        //    CustomList<T> testListResult = new CustomList<T>();     //create new list or object
-        //    for (int i = 0; i < testListOdd.count; i++)              // for loop for list 1
-        //    {
-        //        testListResult.Add(testListOdd[i]);                 // add List 1
-        //        testListResult.Add(testLiistEven[i]);                 // add List 2
-        //    }
-        //    return testListResult;
+        //    throw new NotImplementedException();
         //}
-
-
-
-
-
 
     }
 }
