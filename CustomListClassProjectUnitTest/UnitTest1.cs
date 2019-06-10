@@ -667,34 +667,34 @@ namespace CustomListClassProjectUnitTest
             Assert.AreEqual(expectedString, actualString);
         }
         //Sort two custom: 5 total  -----------------------------------------------------------------------------------------
-        [TestMethod]
-        public void Sort_SortTwoCustomList_ReturnItemValueFromIdexZero()
-        {
-            // arrange
-            CustomList<int> testListOdd = new CustomList<int>();
-            testListOdd.Add(1);
-            testListOdd.Add(3);
-            testListOdd.Add(5);
-            CustomList<int> testListEven = new CustomList<int>();
-            testListEven.Add(2);
-            testListEven.Add(4);
-            testListEven.Add(6);
-            CustomList<int> expectedResult = new CustomList<int>();
-            expectedResult.Add(1);
-            expectedResult.Add(2);
-            expectedResult.Add(3);
-            expectedResult.Add(4);
-            expectedResult.Add(5);
-            expectedResult.Add(6);
-            int expected = 1;
-            int actual;
+        //[TestMethod]
+        //public void Sort_SortTwoCustomList_ReturnItemValueFromIdexZero()
+        //{
+        //    // arrange
+        //    CustomList<int> testListOdd = new CustomList<int>();
+        //    testListOdd.Add(1);
+        //    testListOdd.Add(3);
+        //    testListOdd.Add(5);
+        //    CustomList<int> testListEven = new CustomList<int>();
+        //    testListEven.Add(2);
+        //    testListEven.Add(4);
+        //    testListEven.Add(6);
+        //    CustomList<int> expectedResult = new CustomList<int>();
+        //    expectedResult.Add(1);
+        //    expectedResult.Add(2);
+        //    expectedResult.Add(3);
+        //    expectedResult.Add(4);
+        //    expectedResult.Add(5);
+        //    expectedResult.Add(6);
+        //    int expected = 1;
+        //    int actual;
 
-            // act
-            CustomList<int> result = CustomList<int>.Sort(testListOdd, testListEven);  // cannot do list 1 - or + list 2 for Zip like operator
-            actual = expectedResult[0];
-            // assert
-            Assert.AreEqual(expected, actual);
-        }
+        //    // act
+        //    CustomList<int> result = CustomList<int>.Sort(testListOdd, testListEven);  // cannot do list 1 - or + list 2 for Zip like operator
+        //    actual = expectedResult[0];
+        //    // assert
+        //    Assert.AreEqual(expected, actual);
+        //}
 
     }
 }

@@ -49,10 +49,15 @@ namespace CustomListClassProject
             CustomList<int> actual = CustomList<int>.Zip(testList1, testList2);
 
             //custom list class to be iterable.  -----------------------------------------------------------------------
-            foreach(int number in result)
+            foreach (int number in result)
             {
-                Console.WriteLine(number);               
+                Console.WriteLine(number);
             }
+
+            //C# indexer out-of-bounds/range index.
+            Console.WriteLine(customIntList[0]);
+            Console.ReadLine();
+            customIntList[0] = 3;
             Console.ReadLine();
         }
     }

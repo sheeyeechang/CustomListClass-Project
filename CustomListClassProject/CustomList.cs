@@ -33,13 +33,20 @@ namespace CustomListClassProject
         {
             get
             {
-                return itemArray[i];
+                if (i <= count && i >= 0)       // count greater than i and i greater than 0
+                {
+                    return itemArray[i];        // if statement must be inside get{}
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException("i must be less than count and greater than 0.");
+                }
             }
             set 
             {
-                if (count >= i && i >= 0)       // count greater than i and i greater than 0
+                if (i <= count && i >= 0)       // count greater than i and i greater than 0
                 {
-                    itemArray[i] = value;
+                    itemArray[i] = value;       // if statement must be inside set{}
                 }
                 else
                 {
