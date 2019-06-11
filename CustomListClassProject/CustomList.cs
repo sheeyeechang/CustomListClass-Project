@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace CustomListClassProject
 {
-    public class CustomList<T> : IEnumerable/*, IComparable*/
+    public class CustomList<T> : IEnumerable    /*, IComparable*/
     {
         //Member variable  ------------------------------------------------------------------------------------------
         //Array
-        private T[] itemArray = new T[5];
+        private T[] itemArray;
 
         private int count;
         // read-only Count property: --- read-only = get 
